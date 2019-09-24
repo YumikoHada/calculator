@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="style008-1.css" rel="stylesheet" type="text/css" >
+
+    <title>Calculator!</title>
+  </head>
+  <body>
+    <h2>Welcome to Calculator!</h2>
+
+    <form>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <input type="text" class="form-control" placeholder="num1" id="num1">
+      </div>
+      <div class="form-group col-md-2">
+        <input type="text" class="form-control" placeholder="num2" id="num2">
+      </div>
+      <div class="form-group col-md-2">
+        <input type="text" class="form-control" placeholder="num3" id="num3">
+      </div>
+      <div class="form-group col-md-2">
+        <input type="text" class="form-control" placeholder="num4" id="num4">
+      </div>
+    </div>
+    </form>
+    <form>
+      <div class="row">
+        <div class="form-group col-md-2" id="sum"><input type="text" class="form-control" placeholder="answer"></div>
+      </div>
+    </form>
+    <form>
+      <div class="form-group">
+        <button onclick="add()" class="button">+ Add</button>
+        <button onclick="subtract()" class="button">- Subtract</button>
+        <button onclick="multiply()" class="button">x Multiply</button>
+        <button onclick="divide()" class="button">÷ Divide</button>
+      </div>
+    </form>
+    <form>
+      <button onclick="location.reload()" id="reset" class="button">Clear</button>
+    </form>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $("form").on('submit',function(e){
+          e.preventDefault();
+          //ajax code here
+        });
+        
+        function add(){ 
+          var num1 = document.getElementById('num1').value
+          var num2 = document.getElementById('num2').value
+          var num3 = document.getElementById('num3').value
+          var num4 = document.getElementById('num4').value 
+          document.querySelector('#sum input').value = parseInt(num1) + parseInt(num2) + parseInt(num3) + parseInt(num4);
+        }
+        function subtract(){
+          var num1 = document.getElementById('num1').value
+          var num2 = document.getElementById('num2').value
+          var num3 = document.getElementById('num3').value
+          var num4 = document.getElementById('num4').value 
+
+          document.querySelector('#sum input').value = parseInt(num1) - parseInt(num2) - parseInt(num3) - parseInt(num4);
+        }
+        function multiply(){  
+          var num1 = document.getElementById('num1').value
+          var num2 = document.getElementById('num2').value
+          var num3 = document.getElementById('num3').value
+          var num4 = document.getElementById('num4').value 
+
+          document.querySelector('#sum input').value = parseInt(num1) * parseInt(num2) * parseInt(num3) * parseInt(num4);
+        }
+        function divide(){  
+          var num1 = document.getElementById('num1').value
+          var num2 = document.getElementById('num2').value
+          var num3 = document.getElementById('num3').value
+          var num4 = document.getElementById('num4').value 
+
+          answer = parseFloat(num1) / parseFloat(num2) / parseFloat(num3) / parseFloat(num4);
+          answer = answer.toFixed(2);
+          document.querySelector('#sum input').value = answer; 
+          
+        }
+      
+    </script>
+
+  </body>
+</html>
